@@ -1,0 +1,75 @@
+FUNCTIONALITY:
+[X] User can register an account:
+    [X] User can select the role for that account
+    [X] Food Bank users need to input everything on register
+    [X] Consumer users only need to input email, password, role
+    [X] Stores that user is now logged in w/JWT to local storage
+    [X] Initializes that user as logged in upon refresh usign AuthContext
+
+[X] User can log into an account:
+    [X] User inputs email, password, role
+    [X] Stores that user is now loggied in w/JWT to local storage
+    [X] Initializes that user as logged in upon refresh usign AuthContext
+
+[ ] User can enter profile information based on RBAC
+
+[X] Application is protected:
+    [X] Passwords are salted and hashed before being stored
+    [X] .env file is in gitignore and stores the SECRET
+    [X] All backend routes require a JWT to perform any action
+    [X] All frontend routes automatically redirect the user
+        [X] Redirects based on if the user is logged in
+        [X] Redirects based on the role of the user (RBAC)
+
+[ ] Application CORS compatible:
+    [X] Development build using PROXY in frontend/package.json to PORT
+    [ ] CORS required and implemented
+
+[ ] User properly modelled and stored in the database:
+    [X] email         : global
+    [X] password      : global
+    [X] role          : global
+    [X] subscriptions : global
+    [X] title         : fb req, global op
+    [X] address       : fb req, global op
+    [X] city          : fb req, global op
+    [X] state         : fb req, global op
+    [X] zip           : fb req, global op
+    [X] foodlist      : fb req, global op
+    [X] desc          : fb req, global op
+    [ ] license       : fb req
+    [ ] hours         : fb req
+    [ ] gender        : cr opt
+    [ ] children      : cr opt
+    [ ] govtAssist    : cr opt
+    [ ] All attributes undergo validation upon registration
+
+[X] Order properly modelled and stored in the database:
+    [X] bank_id
+    [X] date
+    [X] content
+    [X] completed
+
+[~] Food Bank Users have current functionality:
+    [X] User can see all orders not marked as complete
+    [X] User can see all orders marked as complete
+    [X] User can mark order as complete
+    [X] User can delete order
+    [X] User can create order
+        [ ] Creation of order notifies subscribed users via email through DB trigger
+    [X] User can update their profile
+
+[ ] Consumer Users have current functionality:
+    [ ] User can see a map of food sources
+        [ ] User can toggle that map
+        [ ] User can see transit options
+        [ ] User can see subscribed banks
+    [X] User can see orders from banks they have subscribed to
+    [ ] User can see banks they are subscribed to
+        [X] User can unsubscribe from banks
+    [ ] User can search for banks
+        [X] User can search based on item
+        [X] User can search based on multiple items
+        [ ] User can search based on location
+        [X] User can subscribe to a bank
+    [ ] User can update profile
